@@ -1,5 +1,6 @@
 import React from "react";
 import IconButton from "../../elements/IconButton";
+import {DEFAULT_COLOR, SELECTED_COLOR} from "../../constants/constants";
 
 interface UpvoteButtonProps {
     isSelected: boolean;
@@ -19,7 +20,7 @@ const UpvoteButton: React.FC<UpvoteButtonProps> = ({isSelected= false, onClick})
                     height="20"
                 >
                     <path
-                        stroke={isSelected ? "#253CF2" : "#343A40"}
+                        stroke={isSelected ? SELECTED_COLOR : DEFAULT_COLOR}
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="60"

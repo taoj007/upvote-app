@@ -1,5 +1,6 @@
 import React, {ReactElement} from "react";
 import styled from "@emotion/styled";
+import {DEFAULT_BC_COLOR, SELECTED_BC_COLOR} from "../constants/constants";
 
 interface IconButtonProps {
     onClick?: () => void;
@@ -8,7 +9,7 @@ interface IconButtonProps {
 }
 
 const Button = styled.button<{ selected: boolean }>`
-  background-color: ${({selected}) => selected ? "#E5E8FD" : "#F4F6F8"};
+  background-color: ${({selected}) => selected ? SELECTED_BC_COLOR : DEFAULT_BC_COLOR};
   border: none;
   padding: 8px;
   cursor: pointer;
