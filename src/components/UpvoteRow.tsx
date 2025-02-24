@@ -14,25 +14,24 @@ const UpvoteRow: React.FC<UpvoteRowProps> = ({upVoteNumber, clickedIndex}) => {
 
     const listIds = Array.from({length: upVoteNumber}, (_, index) => `list${index + 1}`);
     const RowWrapper = styled.div`
-        width: 80%;
-        margin: auto;
-        border: 1px solid black;
+        width: 100%;
         display: flex;
         justify-content: space-between;
+        column-gap: 16px;
         padding: 16px;
     `;
     const UpvoteWrapper = styled.div`
+      width: 90%;
       border: 1px solid gray;
       border-radius: 4px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
-      column-gap: 16px;
+      gap: 16px;
       padding: 16px;
     `;
     const BtnWrapper = styled.div`
-      border: 1px solid gray;
       border-radius: 4px;
       display: flex;
       align-items: center;
