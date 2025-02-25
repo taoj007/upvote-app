@@ -18,7 +18,7 @@ const UpvoteList: React.FC = () => {
     `;
     return (
         <UpvoteListWrapper>
-            {upvoteNumberMatrix.map((voteNumber, index)=><UpvoteRow key={index} upVoteNumber={voteNumber} clickedIndex={index}/>)}
+            {upvoteNumberMatrix.map((voteNumber, index)=><UpvoteRow key={index} upVoteNumber={voteNumber} rowOrder={index}/>)}
         </UpvoteListWrapper>
     );
 };

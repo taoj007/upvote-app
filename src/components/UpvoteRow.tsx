@@ -6,10 +6,10 @@ import {useUpvoteContext} from "../context/UpvoteContext";
 
 interface UpvoteRowProps {
     upVoteNumber: number;
-    clickedIndex: number;
+    rowOrder: number;
 }
 
-const UpvoteRow: React.FC<UpvoteRowProps> = ({upVoteNumber, clickedIndex}) => {
+const UpvoteRow: React.FC<UpvoteRowProps> = ({upVoteNumber, rowOrder}) => {
     const {updateUpvoteNumberMatrix, updateIsSelectedMatrix, isSelectedMatrix} = useUpvoteContext()
 
     const listIds = Array.from({length: upVoteNumber}, (_, index) => `list${index + 1}`);
@@ -46,16 +46,16 @@ const UpvoteRow: React.FC<UpvoteRowProps> = ({upVoteNumber, clickedIndex}) => {
                 {listIds.map((_, index) =>
                     <UpvoteButton
                         onClick={() => {
-                            updateIsSelectedMatrix(clickedIndex)
+                            updateIsSelectedMatrix(rowOrder)
                         }}
                         key={index}
-                        isSelected={isSelectedMatrix[clickedIndex]}
+                        isSelected={isSelectedMatrix[rowOrder]}
                     />)}
             </UpvoteWrapper>
             <BtnWrapper>
                 <AddButton onClick={
                     () => {
-                        updateUpvoteNumberMatrix(clickedIndex)
+                        updateUpvoteNumberMatrix(rowOrder)
                     }
                 }/>
             </BtnWrapper>
